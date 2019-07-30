@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:27:39 by crath             #+#    #+#             */
-/*   Updated: 2019/06/19 18:34:45 by crath            ###   ########.fr       */
+/*   Updated: 2019/07/30 16:23:56 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,8 @@ void       sa(t_stack *head);
 void       ra(t_stack *head);
 void       rra(t_stack **head);
 void		pa(t_stack *a, t_stack *b);
+void		print_stack_B(t_stack *stack);
+void 		pb(t_stack *a, t_stack *b);
+void		ft_get_median(t_stack *stack);
 
 #endif
