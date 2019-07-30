@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 13:32:58 by crath             #+#    #+#             */
-/*   Updated: 2019/06/15 21:56:53 by crath            ###   ########.fr       */
+/*   Updated: 2019/07/30 13:35:44 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include "../includes/push_swap.h"
 

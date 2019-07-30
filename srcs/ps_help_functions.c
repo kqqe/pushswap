@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_help_functions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:46:40 by crath             #+#    #+#             */
-/*   Updated: 2019/06/15 16:17:49 by crath            ###   ########.fr       */
+/*   Updated: 2019/07/30 15:26:51 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include "../includes/push_swap.h"
 
@@ -77,6 +78,22 @@ void		print_stack(t_stack *stack)
 	}
 	printf("\n");
 }
+
+void		print_stack_B(t_stack *stack)
+{
+	t_node	*iter;
+
+	printf("Stack B is: ");
+	
+	iter = stack->head;
+	while (iter)
+	{
+		printf(" %d", iter->data);
+		iter = iter->next;
+	}
+	printf("\n");
+}
+
 
 int			lenght_of_2D_array(char **av)
 {

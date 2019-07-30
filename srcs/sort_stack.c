@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/15 23:22:03 by crath             #+#    #+#             */
-/*   Updated: 2019/06/19 18:44:41 by crath            ###   ########.fr       */
+/*   Created: 2019/06/15 23:22:03 by pben              #+#    #+#             */
+/*   Updated: 2019/07/30 16:16:59 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "../includes/push_swap.h"
 
 void		sort_stack(t_stack *stack_a, t_stack *stack_b)

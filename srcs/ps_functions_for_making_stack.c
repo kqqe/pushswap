@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_functions_for_making_stack.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 23:21:09 by GriK              #+#    #+#             */
-/*   Updated: 2019/06/15 18:59:46 by crath            ###   ########.fr       */
+/*   Updated: 2019/07/30 13:35:47 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include "../includes/push_swap.h"
 

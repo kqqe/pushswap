@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_functions_for_working_with_stack.c              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crath <crath@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 23:24:25 by GriK              #+#    #+#             */
-/*   Updated: 2019/06/15 23:09:33 by crath            ###   ########.fr       */
+/*   Created: 2019/06/13 23:24:25 by pben              #+#    #+#             */
+/*   Updated: 2019/07/30 16:17:21 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdio.h>
 #include "../includes/push_swap.h"
 
@@ -20,7 +21,7 @@ int			top(const t_node *head)
 	return (head->data);
 }
 
-int			pop_front(t_stack *stack)
+int			pop_front(t_stack *stack) //not comand sabject
 {
 	t_node		*temp;
 	int			data;
