@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 13:32:47 by crath             #+#    #+#             */
-/*   Updated: 2019/07/30 17:58:52 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/01 21:35:58 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,38 +36,12 @@ int			main(int ac, char **av)
 	// print_stack(stack_b);
 	// printf("\nStack's TOP: %d\n", stack_a->top);
 	// printf("Stack's SIZE: %d\n", stack_a->size);
+	//free_stack(&stack_a);
+	//free_stack(&stack_b);
 
 	return (0);
 }
 
  //https://habr.com/ru/post/346930/qqicksellect
  //https://www.youtube.com/watch?v=ULVgSl5qWik // track
-void		ft_get_median(t_stack *stack)
-{
-	int		tmp;
-	t_node	*node; 
-
-	node = stack->head;
-	while (node->next != NULL)
-	{
-		//printf("stack do =  %d\n", node->data);
-		if (node->data > node->next->data)
-		{
-			tmp = node->data;
-			node->data = node->next->data;
-			node->next->data = tmp;
-			node = node->next;
-		}
-		else
-			node = node->next;
-	}
-	if(stack->size-- > 0)
-	{
-		ft_get_median(stack);
-	}
-
-}
-
-
-
 

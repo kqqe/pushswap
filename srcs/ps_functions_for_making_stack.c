@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 23:21:09 by GriK              #+#    #+#             */
-/*   Updated: 2019/07/30 13:35:47 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/01 18:45:50 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ void		make_stack_a_from_mult_arg(t_stack *stack_a, int ac, char **av)
 
 	printf("\nThe count of integers: %d \n\n", ac - 1);
 
-	i = 1;
-	while (i < ac)
+	i = ac - 1;
+	while (i > 0)
 	{
 		printf("Adding an integer %d to the stack A... \n", ft_atoi(av[i]));
 		push_front(stack_a, ft_atoi(av[i]));
 		print_stack(stack_a);
-		i++;
+		i--;
 	}
 	stack_a->top = top(stack_a->head);
 }
