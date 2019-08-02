@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 17:27:39 by crath             #+#    #+#             */
-/*   Updated: 2019/07/30 16:23:56 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 16:33:06 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct			s_stack
 	t_node				*head;
 	int					top;
 	int					size;
+	int 				pivot;
 }						t_stack;
 
 
@@ -62,13 +63,25 @@ void		try_to_find_duplicates(char **temp, int i, int depth);
 
 void		push_front(t_stack *stack, int data);
 void		sort_stack(t_stack *stack_a, t_stack *stack_b);
-//tolya function
-void       sa(t_stack *head);
-void       ra(t_stack *head);
-void       rra(t_stack **head);
+//my function
+void		sa(t_stack *head);
+void		sb(t_stack *head);
+void 		ss(t_stack *a, t_stack *b);
+void		ra(t_stack *head);
+void		rb(t_stack *head);
+void		rr(t_stack *a, t_stack *b);
+void		rra(t_stack **head);
+void		rrb(t_stack **head);
+void 		rrr(t_stack **a, t_stack **b);
 void		pa(t_stack *a, t_stack *b);
+void		pb(t_stack *a, t_stack *b);
 void		print_stack_B(t_stack *stack);
-void 		pb(t_stack *a, t_stack *b);
-void		ft_get_median(t_stack *stack);
+int			ft_get_median(t_stack *stack);
+void    	quick_sort_a(t_stack *stack_a, t_stack *stack_b);
+void    	quick_sort_b(t_stack *stack_a, t_stack *stack_b);
+int			check_sort(t_stack *a);
+void    	rot(t_stack *a, int rot_count);
+void    	push(t_stack *b, int  push_count);
+int			ft_for_little_size(t_stack *a, t_stack *b);
 
 #endif
