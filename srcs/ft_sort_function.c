@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 23:22:03 by pben              #+#    #+#             */
-/*   Updated: 2019/08/02 16:33:32 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 18:03:02 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,8 @@ void	rrb(t_stack **head)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(&a);
-	rrb(&b);
+	rra(a);
+	rrb(b);
 	printf("rrr\n");
 }
 
