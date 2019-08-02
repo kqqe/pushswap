@@ -6,17 +6,17 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 23:22:03 by pben              #+#    #+#             */
-/*   Updated: 2019/08/01 19:07:24 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 16:33:32 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "../includes/push_swap.h"
 
-void		sa(t_stack *head)
+void	sa(t_stack *head)
 {
 	t_node	*node_2;
-	int     tmp_data;
+	int		tmp_data;
 
 	node_2 = head->head->next;
 	if (node_2 != NULL)
@@ -25,10 +25,32 @@ void		sa(t_stack *head)
 		head->head->data = node_2->data;
 		node_2->data = tmp_data;
 	}
+	printf("sa\n");
 }
 
+void	sb(t_stack *head)
+{
+	t_node	*node_2;
+	int		tmp_data;
 
-void       ra(t_stack *head)
+	node_2 = head->head->next;
+	if (node_2 != NULL)
+	{
+		tmp_data = head->head->data;
+		head->head->data = node_2->data;
+		node_2->data = tmp_data;
+	}
+	printf("sb\n");
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
+	printf("ss\n");
+}
+
+void	ra(t_stack *head)
 {
 	t_node	*node_2;
 	int		tmp_data;
@@ -38,14 +60,40 @@ void       ra(t_stack *head)
 	while (node_2 != NULL)
 	{
 		if (node_2->next == NULL)
-			break;
+			break ;
 		node_2->data = node_2->next->data;
 		node_2 = node_2->next;
 	}
 	node_2->data = tmp_data;
+	printf("ra\n");
 }
 
-void		rra(t_stack **head)
+void	rb(t_stack *head)
+{
+	t_node	*node_2;
+	int		tmp_data;
+
+	node_2 = head->head;
+	tmp_data = head->head->data;
+	while (node_2 != NULL)
+	{
+		if (node_2->next == NULL)
+			break ;
+		node_2->data = node_2->next->data;
+		node_2 = node_2->next;
+	}
+	node_2->data = tmp_data;
+	printf("rb\n");
+}
+
+void		rr(t_stack *a, t_stack *b)
+{
+	ra(a);
+	rb(b);
+	printf("rr\n");
+}
+
+void	rra(t_stack **head)
 {
 	t_node *node_2;
 	t_node *temp;
@@ -56,12 +104,37 @@ void		rra(t_stack **head)
 		node_2 = node_2->next;
 	}
 	temp = node_2->next;
-	node_2->next= NULL;
+	node_2->next = NULL;
 	temp->next = (*head)->head;
-	(*head)->head = temp; 
+	(*head)->head = temp;
+	printf("rra\n");
 }
 
-void		pa(t_stack *a, t_stack *b)//
+void	rrb(t_stack **head)
+{
+	t_node *node_2;
+	t_node *temp;
+
+	node_2 = (*head)->head;
+	while (node_2->next->next != NULL)
+	{
+		node_2 = node_2->next;
+	}
+	temp = node_2->next;
+	node_2->next = NULL;
+	temp->next = (*head)->head;
+	(*head)->head = temp;
+	printf("rrb\n");
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	rra(&a);
+	rrb(&b);
+	printf("rrr\n");
+}
+
+void	pa(t_stack *a, t_stack *b)
 {
 	t_node *tmp;
 
@@ -77,9 +150,10 @@ void		pa(t_stack *a, t_stack *b)//
 		b->head = tmp;
 		b->size++;
 	}
-
+	printf("pa\n");
 }
-void 	pb(t_stack *a, t_stack *b)
+
+void	pb(t_stack *a, t_stack *b)
 {
 	t_node *tmp;
 
@@ -95,6 +169,5 @@ void 	pb(t_stack *a, t_stack *b)
 		a->head = tmp;
 		a->size--;
 	}
-
+	printf("pb\n");
 }
-

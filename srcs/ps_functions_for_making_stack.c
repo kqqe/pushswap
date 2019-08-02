@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 23:21:09 by GriK              #+#    #+#             */
-/*   Updated: 2019/08/01 18:45:50 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 13:36:01 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void		make_stack_a_from_string(t_stack *stack_a, char **av)
 
 	printf("\nThe count of integers: %d \n\n", lenght_of_2D_array(temp));
 
-	i = 0;
-	while (i < lenght_of_2D_array(temp))
+	i = lenght_of_2D_array(temp) - 1;
+	while (i >= 0)
 	{
 		printf("Adding an integer %d to the stack A... \n", ft_atoi(temp[i]));
 		push_front(stack_a, ft_atoi(temp[i]));
 		print_stack(stack_a);
-		i++;
+		i--;
 	}
 	stack_a->top = top(stack_a->head);
 	free(temp);
