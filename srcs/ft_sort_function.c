@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 23:22:03 by pben              #+#    #+#             */
-/*   Updated: 2019/08/02 18:03:02 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 19:07:52 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	rb(t_stack *head)
 	t_node	*node_2;
 	int		tmp_data;
 
+	if ((!head) || !(head->head->next))
+		return ;
 	node_2 = head->head;
 	tmp_data = head->head->data;
 	while (node_2 != NULL)
@@ -93,37 +95,41 @@ void		rr(t_stack *a, t_stack *b)
 	printf("rr\n");
 }
 
-void	rra(t_stack **head)
+void	rra(t_stack **stack)
 {
-	t_node *node_2;
-	t_node *temp;
+	t_node	*cur;
+	t_node	*tmp;
+	int		n;
 
-	node_2 = (*head)->head;
-	while (node_2->next->next != NULL)
-	{
-		node_2 = node_2->next;
-	}
-	temp = node_2->next;
-	node_2->next = NULL;
-	temp->next = (*head)->head;
-	(*head)->head = temp;
+	if (!(*stack)->head || !(*stack)->head->next)
+		return ;
+	cur = (*stack)->head;
+	while (cur->next->next)
+		cur = cur->next;
+	n = cur->next->data;
+	tmp = cur->next;
+	cur->next = NULL;
+	free(tmp);
+	push_front(*stack, n);
 	printf("rra\n");
 }
 
-void	rrb(t_stack **head)
+void	rrb(t_stack **stack)
 {
-	t_node *node_2;
-	t_node *temp;
+	t_node	*cur;
+	t_node	*tmp;
+	int		n;
 
-	node_2 = (*head)->head;
-	while (node_2->next->next != NULL)
-	{
-		node_2 = node_2->next;
-	}
-	temp = node_2->next;
-	node_2->next = NULL;
-	temp->next = (*head)->head;
-	(*head)->head = temp;
+	if (!(*stack)->head || !(*stack)->head->next)
+		return ;
+	cur = (*stack)->head;
+	while (cur->next->next)
+		cur = cur->next;
+	n = cur->next->data;
+	tmp = cur->next;
+	cur->next = NULL;
+	free(tmp);
+	push_front(*stack, n);
 	printf("rrb\n");
 }
 

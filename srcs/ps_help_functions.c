@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:46:40 by crath             #+#    #+#             */
-/*   Updated: 2019/08/02 13:28:00 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 19:08:44 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void		print_stack_B(t_stack *stack)
 
 	printf("Stack B is: ");
 	
+	if (stack == NULL)
+		return ;
 	iter = stack->head;
 	while (iter)
 	{

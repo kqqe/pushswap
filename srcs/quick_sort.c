@@ -6,7 +6,7 @@
 /*   By: pben <pben@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 21:36:37 by pben              #+#    #+#             */
-/*   Updated: 2019/08/02 18:08:40 by pben             ###   ########.fr       */
+/*   Updated: 2019/08/02 19:33:38 by pben             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 int		ft_for_little_size(t_stack *a, t_stack *b)
 {
+    if (b->head == NULL)
+        return (0);
 	if (b->size == 1)
 	{
 		pa(a, b);
@@ -48,14 +50,14 @@ int				check_sort(t_stack *a)
 	}
 	return (1);
 }
-void    rot(t_stack *a, int rot_count)
+void    rot(t_stack *stack, int rot_count)
 {
-    a->size = rot_count;
+    stack->size = rot_count;
 }
 
-void    push(t_stack *b, int  push_count)
+void    push(t_stack *stack, int  push_count)
 {
-    b->size = push_count;
+    stack->size = push_count;
 }
 void    quick_sort_a(t_stack *stack_a, t_stack *stack_b)
 {
@@ -95,8 +97,7 @@ void    quick_sort_a(t_stack *stack_a, t_stack *stack_b)
     rot(stack_a, rot_count);
     quick_sort_a(stack_a, stack_b);
     push(stack_b, push_count);
-    quick_sort_b(stack_a, stack_b);
-        
+    quick_sort_b(stack_a, stack_b);   
 }
 
 void    quick_sort_b(t_stack *stack_a, t_stack *stack_b)
@@ -105,7 +106,7 @@ void    quick_sort_b(t_stack *stack_a, t_stack *stack_b)
 	int		rot_count;
 	int		i;
 
-	if ((stack_b->size < 3) && ft_for_little_size(stack_a, stack_b))
+	if (((stack_b->size < 3) && ft_for_little_size(stack_a, stack_b)) //(!stack_b->head))
 		return ;
 	stack_b->pivot = ft_get_median(stack_b);
     printf("pivot B = %d\n", stack_b->pivot);
@@ -113,6 +114,8 @@ void    quick_sort_b(t_stack *stack_a, t_stack *stack_b)
 	rot_count = 0;
 	while (push_count + rot_count < stack_b->size)
 	{
+        if (stack_b->head == NULL)
+            return ;
 		stack_b->head->data > stack_b->pivot ? push_count++ : rot_count++;
 		if (stack_b->head->data > stack_b->pivot)
         {
@@ -125,13 +128,14 @@ void    quick_sort_b(t_stack *stack_a, t_stack *stack_b)
             print_stack_B(stack_b);
         }
 	}
-    rot(stack_a, rot_count);//  просто сайз равен рот
+    
+    push(stack_a, push_count);
 	quick_sort_a(stack_a, stack_b);
 	i = 0;
 	while (i++ < rot_count)
 		rrb(&stack_b);
-        print_stack_B(stack_b);
-    push(stack_b, push_count);// сайз равен пуш
+    print_stack_B(stack_b);
+    rot(stack_b, rot_count);
 	quick_sort_b(stack_a, stack_b);
         
 }
