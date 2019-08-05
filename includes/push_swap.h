@@ -83,5 +83,6 @@ int			check_sort(t_stack *a);
 void    	rot(t_stack *a, int rot_count);
 void    	push(t_stack *b, int  push_count);
 int			ft_for_little_size(t_stack *a, t_stack *b);
+void 	cheak(t_stack *a, t_stack *b);
 
 #endif
