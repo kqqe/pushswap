@@ -65,6 +65,7 @@ void	ra(t_stack *head)
 		node_2 = node_2->next;
 	}
 	node_2->data = tmp_data;
+	//head->size++;
 	printf("ra\n");
 }
 
@@ -85,6 +86,7 @@ void	rb(t_stack *head)
 		node_2 = node_2->next;
 	}
 	node_2->data = tmp_data;
+	//head->size++;
 	printf("rb\n");
 }
 
@@ -154,7 +156,7 @@ void	pa(t_stack *a, t_stack *b)
 		b->head->next = a->head;
 		a->head = b->head;
 		b->head = tmp;
-		b->size++;
+		//b->size++;
 	}
 	printf("pa\n");
 }
@@ -173,7 +175,7 @@ void	pb(t_stack *a, t_stack *b)
 		a->head->next = b->head;
 		b->head = a->head;
 		a->head = tmp;
-		a->size--;
+		//a->size--;
 	}
 	printf("pb\n");
 }

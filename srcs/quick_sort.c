@@ -83,6 +83,7 @@ void    quick_sort_a(t_stack *stack_a, t_stack *stack_b)
         if(stack_a->head->data < stack_a->pivot)
         {
             pb(stack_a, stack_b);
+
             print_stack_B(stack_b);
         }
         else
@@ -91,9 +92,13 @@ void    quick_sort_a(t_stack *stack_a, t_stack *stack_b)
             print_stack(stack_a);
         }
     }
-    if(stack_a->head->data < stack_a->size - push_count)
+
+    if(rot_count < stack_a->size - push_count)
+    {
+        printf("top %d", stack_a->top);
         rra(&stack_a);
-        print_stack(stack_a);
+       // print_stack(stack_a);
+    }
     rot(stack_a, rot_count);
     quick_sort_a(stack_a, stack_b);
     push(stack_b, push_count);
@@ -106,8 +111,10 @@ void    quick_sort_b(t_stack *stack_a, t_stack *stack_b)
 	int		rot_count;
 	int		i;
 
-	if (((stack_b->size < 3) && ft_for_little_size(stack_a, stack_b)) //(!stack_b->head))
+	if ((stack_b->size < 3) && ft_for_little_size(stack_a, stack_b))
+
 		return ;
+
 	stack_b->pivot = ft_get_median(stack_b);
     printf("pivot B = %d\n", stack_b->pivot);
 	push_count = 0;
